@@ -11,7 +11,6 @@ const education = [
     period: 'Oct 2023 – Oct 2027',
     description: 'Software Engineering, Information Technology',
     achievements: [
-      'Current GPA: 2.99',
       'Activities and societies: MMA Team of SLIIT and Member Of SLIIT Sport Council',
       'Skills: Full-Stack Development, JavaScript, and more'
     ],

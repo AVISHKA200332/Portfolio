@@ -444,18 +444,6 @@ const About = () => {
                       <p className="text-sm text-light/60 mb-4">2023 - 2027 | Colombo, Sri Lanka</p>
                       
                       <div className="space-y-3">
-                        <div className="flex">
-                          <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Current GPA: 3.6/4.0 (First Class Honors)</p>
-                        </div>
-                        <div className="flex">
-                          <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Relevant Coursework: Data Structures & Algorithms, Database Systems, Web Development, Software Engineering, Computer Networks</p>
-                        </div>
-                        <div className="flex">
-                          <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Thesis: "Optimizing Microservices Architecture for Scalable Web Applications" (Ongoing)</p>
-                        </div>
                       </div>
                     </div>
                   </div>
