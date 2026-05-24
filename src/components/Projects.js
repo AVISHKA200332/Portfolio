@@ -24,10 +24,20 @@ const projectImageMap = {
   'wildquest': '/images/projects/WildQuest_preview.png',
 };
 
+const projectDemoMap = {
+  'portfolio': 'https://avishka-portfolio-22.vercel.app/',
+  'portfolio-main': 'https://avishka-portfolio-22.vercel.app/',
+};
+
 const normalizeKey = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
 const getProjectImage = (name = '') => {
   const key = normalizeKey(name);
   return projectImageMap[key] || '';
+};
+
+const getProjectDemo = (name = '') => {
+  const key = normalizeKey(name);
+  return projectDemoMap[key] || '';
 };
 
 // Map primary language to technology icons
@@ -72,7 +82,7 @@ const toProject = (repo, index) => {
     technologies: tech,
     category: inferCategory(repo),
     github: repo.html_url,
-    demo: repo.homepage || '',
+    demo: getProjectDemo(repo.name) || repo.homepage || '',
     image: getProjectImage(repo.name),
     accentColor: gradientPalette[index % gradientPalette.length],
   };
@@ -80,6 +90,9 @@ const toProject = (repo, index) => {
 
 const ProjectCard = ({ project, index }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const useDarkText = ['powersense', 'healthmate', 'habbit-tracker', 'habbit_tracker'].includes(
+    project.title.toLowerCase()
+  );
   
   return (
     <motion.div
@@ -95,10 +108,10 @@ const ProjectCard = ({ project, index }) => {
         <div className={`absolute inset-0 bg-gradient-to-br ${project.accentColor} opacity-90`}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-dark/95 to-transparent z-10"></div>
         <div className="absolute bottom-4 left-4 z-20">
-          <span className="inline-block px-3 py-1 text-xs font-medium text-white bg-black/30 backdrop-blur-sm rounded-full mb-2">
+          <span className={`inline-block px-3 py-1 text-xs font-medium ${useDarkText ? 'text-black bg-white/70' : 'text-white bg-black/30'} backdrop-blur-sm rounded-full mb-2`}>
             {project.category}
           </span>
-          <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+          <h3 className={`text-2xl font-bold ${useDarkText ? 'text-black' : 'text-white'}`}>{project.title}</h3>
         </div>
         {project.image ? (
           <>
