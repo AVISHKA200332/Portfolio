@@ -6,6 +6,7 @@ import profile from '../data/profile';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -148,6 +149,7 @@ const Navbar = () => {
             whileHover={{ y: -2, scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Menu"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             <svg
               className="w-5 h-5"
@@ -166,6 +168,23 @@ const Navbar = () => {
           </motion.button>
         </div>
       </nav>
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-800/70 bg-dark/95 backdrop-blur-lg">
+          <div className="px-4 py-4 grid grid-cols-2 gap-3">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-light/80 hover:text-primary hover:bg-gray-800/50 transition-colors"
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="text-sm font-medium">{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
 };
