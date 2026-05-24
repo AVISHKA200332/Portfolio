@@ -5,14 +5,14 @@ import profile from '../data/profile';
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-dark">
+    <section id="home" className="min-h-screen pt-24 sm:pt-28 flex items-center justify-center relative overflow-hidden bg-dark">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-dark from-30% to-dark/90"></div>
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
       </div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-24 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center w-full">
           <motion.div
             className="text-center lg:text-left"
             initial={{ opacity: 0, x: -30 }}
@@ -55,21 +55,21 @@ const Hero = () => {
             </motion.p>
 
             <motion.div 
-              className="flex flex-wrap gap-4 mb-16"
+              className="flex flex-wrap gap-4 mb-10 md:mb-16"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
               <a
                 href="#contact"
-                className="relative px-8 py-4 bg-gradient-to-r from-primary to-primary/80 text-dark font-medium rounded-md group overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                className="relative px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary/80 text-dark font-medium rounded-md group overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
               >
                 <span className="relative z-10">Get In Touch</span>
                 <span className="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </a>
               <a
                 href="#projects"
-                className="relative px-8 py-4 border border-light/20 text-light font-medium rounded-md group overflow-hidden transition-all duration-300 hover:border-primary/30 hover:text-primary"
+                className="relative px-6 py-3 sm:px-8 sm:py-4 border border-light/20 text-light font-medium rounded-md group overflow-hidden transition-all duration-300 hover:border-primary/30 hover:text-primary"
               >
                 <span className="relative z-10">View My Work</span>
                 <span className="absolute inset-0 bg-primary/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -132,7 +132,7 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.6, 0.01, 0, 0.9] }}
           >
-            <div className="relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
               {/* Decorative elements */}
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full filter blur-3xl"></div>
               <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-secondary/5 rounded-full filter blur-3xl"></div>
@@ -165,7 +165,7 @@ const Hero = () => {
       </div>
 
       <motion.div 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-10 left-1/2 transform -translate-x-1/2"
         animate={{
           y: [0, 10, 0],
         }}

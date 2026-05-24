@@ -36,7 +36,7 @@ const Navbar = () => {
         scrolled ? 'bg-dark/98 backdrop-blur-lg shadow-2xl border-b border-gray-800' : 'bg-dark/95 backdrop-blur-md'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 py-2 sm:py-3 flex justify-between items-center">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0, x: -20 }}
@@ -45,13 +45,13 @@ const Navbar = () => {
         >
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="p-2 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-primary/20 shadow-lg shadow-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="p-1.5 sm:p-2 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-primary/20 shadow-lg shadow-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
             aria-label="Scroll to top"
           >
             <img 
               src="/images/logo.png" 
               alt={`${profile.name} Logo`} 
-              className="h-20 w-auto"
+              className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto"
             />
           </button>
         </motion.div>
