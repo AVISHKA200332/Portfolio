@@ -1,0 +1,23 @@
+{
+  "short_name": "Avishka",
+  "name": "Avishka Dinushan | Portfolio",
+  "description": "Personal portfolio of Avishka Dinushan - Web Developer & Designer",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
