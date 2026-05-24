@@ -184,15 +184,15 @@ const Projects = () => {
     const fetchRepos = async () => {
       try {
         const res = await fetch(
-          `https://api.github.com/search/repositories?q=contributor:${username}+fork:false&sort=updated&order=desc&per_page=30`,
+          `https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=9`,
           {
-          headers: {
-            Accept: 'application/vnd.github+json'
-          }
+            headers: {
+              Accept: 'application/vnd.github+json'
+            }
           }
         );
         const data = await res.json();
-        const items = Array.isArray(data?.items) ? data.items : [];
+        const items = Array.isArray(data) ? data : [];
         if (items.length) {
           const mapped = items
             .filter((r) => !r.private)
