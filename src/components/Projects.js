@@ -27,8 +27,8 @@ const projectImageMap = {
 const projectDemoMap = {
   'portfolio': 'https://avishka-portfolio-22.vercel.app/',
   'portfolio-main': 'https://avishka-portfolio-22.vercel.app/',
-  'powersense': 'https://power-sense-u4qe.vercel.app/',
-  'healthmate': 'https://health-mate-lyart-ten.vercel.app/',
+  'powersense': 'https://powersense-af.vercel.app/',
+  'healthmate': 'https://healthmate-ds.vercel.app/',
 };
 
 const normalizeKey = (s = '') => s.toLowerCase().replace(/[^a-z0-9]+/g, '-');
